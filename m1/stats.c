@@ -9,16 +9,16 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file stats.c 
+ * @brief This file has the C- Implementation to performs statitical analysis 
+ *      on an set of data like maximum, minimum, mean, and median. Also It arranges 
+ *      the data in decending order.
  *
- * <Add Extended Description Here>
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author Akshith Aluguri
+ * @date 03-04-2022
  *
  */
-
 
 
 #include <stdio.h>
@@ -41,3 +41,17 @@ void main() {
 }
 
 /* Add other Implementation File Code Here */
+void print_statistics(unsigned char* Array, unsigned int count){}
+
+void print_array(unsigned char* Array, unsigned int count){}
+
+unsigned char find_median(unsigned char* Array, unsigned int count){}
+
+unsigned char find_mean(unsigned char* Array, unsigned int count){}
+
+unsigned char find_maximum(unsigned char* Array, unsigned int count){}
+
+unsigned char find_minimum(unsigned char* Array, unsigned int count){}
+
+void sort_array(unsigned char* Array, unsigned int count){}
+
