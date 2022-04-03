@@ -36,22 +36,81 @@ void main() {
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
   /* Other Variable Declarations Go Here */
+    unsigned int count=SIZE;
+  //   maximum,minimum,median,mean=0;
+
   /* Statistics and Printing Functions Go Here */
+  printf("Given Array: \n");
+  print_array(test, count);
+
+  printf("Sorted Array in Decending Order: \n");
+  sort_array(test,count);
+  print_array(test, count);
+
+  printf("Array Statistics:\n");
+  print_statistics(test,count);
 
 }
 
 /* Add other Implementation File Code Here */
-void print_statistics(unsigned char* Array, unsigned int count){}
+void print_statistics(unsigned char* Array, unsigned int count){
 
-void print_array(unsigned char* Array, unsigned int count){}
+  unsigned char median = find_median(Array, count);
+  unsigned char mean = find_mean(Array, count);
+  unsigned char maximum = find_maximum(Array, count);
+  unsigned char minimum = find_minimum(Array, count);
 
-unsigned char find_median(unsigned char* Array, unsigned int count){}
+  printf("The median is %d \n", median);
+  printf("The mean is %d \n", mean);
+  printf("The maximum is %d \n", maximum);
+  printf("The minimum is %d \n", minimum);
+}
 
-unsigned char find_mean(unsigned char* Array, unsigned int count){}
+void print_array(unsigned char* Array, unsigned int count){
 
-unsigned char find_maximum(unsigned char* Array, unsigned int count){}
+  for(int i = 0 ; i < count ; i++)printf("%d, ", Array[i]);
+  printf("\n");
+}
 
-unsigned char find_minimum(unsigned char* Array, unsigned int count){}
+unsigned char find_median(unsigned char* Array, unsigned int count){
 
-void sort_array(unsigned char* Array, unsigned int count){}
+    if(count & 1) return Array[count /2];
+  return (Array[(count - 1) /2] + Array[count /2]) /2;
+}
+
+unsigned char find_mean(unsigned char* Array, unsigned int count){
+
+  int sum=0;
+  for(int i = 0 ; i < count ; i++) sum+=Array[i];
+  if ((sum/((float)count)-sum/count)>0.5)return (sum/count)+1;
+  else return sum/count;
+}
+
+unsigned char find_maximum(unsigned char* Array, unsigned int count){
+  
+  unsigned char max=0;
+  for(int i=0; i<count; ++i) if(Array[i]>max) max= Array[i];
+  return max;
+}
+
+unsigned char find_minimum(unsigned char* Array, unsigned int count){
+    
+  unsigned char min=Array[0];
+  for(int i=0; i<count; ++i) if(Array[i]<min) min= Array[i];
+  return min;
+}
+
+void sort_array(unsigned char* Array, unsigned int count){
+
+    int temp;
+    for(int i=0; i<count; ++i){
+    for(int j=i+1; j<count; ++j){
+      if(Array[i]<Array[j]){
+        temp = Array[i];
+        Array[i]=Array[j];
+        Array[j]=temp;
+      }
+    }
+  }
+}
 
