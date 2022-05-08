@@ -20,12 +20,7 @@
  * @date April 1 2017
  *
  */
-#include "memory.h"
-
-/***********************************************************
- Global Variables
-***********************************************************/
-char buffer[MAX_LENGTH];
+#include "../include/common/memory.h"
 
 /***********************************************************
  Function Definitions
